@@ -1,0 +1,20 @@
+﻿create table customer(cust_no varchar(5) primary key,cust_name varchar(15),age int,phone varchar(10));
+insert into customer values('101','geetha','32','6753489234');
+insert into customer values('102','archan','40','9034526785');
+insert into customer values('103','manu','20','7845368234');
+insert into customer values('104','swetha','36','7456329156');
+select*from customer;
+alter table customer add column d_birth date;
+update customer set d_birth='2019-09-12' where cust_no='101';
+update customer set d_birth='2001-04-06' where cust_no='102';
+update customer set d_birth='1990-09-12' where cust_no='103';
+update customer set d_birth='2003-05-01' where cust_no='104';
+select*from customer;
+
+create table cust_phone as select cust_name,phone from customer;
+alter table customer drop column age; 
+select*from customer;
+alter table customer alter column cust_name type varchar(25);
+alter table customer rename to cust;
+drop table cust; 
+drop table customer;
